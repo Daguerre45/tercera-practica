@@ -7,14 +7,50 @@ import java.util.List;
 
 import org.junit.Test;
 
+import jdk.jfr.Timestamp;
+
 /**
  * Unit test for simple App.
  */
-public class AppTest {
+public class GraphTest {
     /**
      * Este test comprueba que el método ‘onePath(V v1, V v2)‘ encuentra un camino
      * entre ‘v1‘ y ‘v2‘ cuando existe.
      */
+
+    Graph<Integer> gInts;
+    
+
+    @Before
+    public voidsetup(){
+        gInts = new Graph<Integer> ;
+    }
+
+    @Test
+    public void graphExixstsTest(){
+        assertNotNull(true);
+    }
+
+    @Test
+    public void toStringEmptyTest(){
+        String expectedOutputs = "Vertice\tConexiones\n";
+        assertEquals(expectedOutputs,gInts.toString());
+    }
+
+    @Test 
+    public void toStringSingleVertexTest(){
+        gInts.addVertex(1);
+        String expectedOutput = "Vertice\tConexiones\n" + "1\t\n" ;
+        assertEquals(expectedOutput,gInts.toString());
+
+    }
+
+    @Test 
+    public void addSingleVertexTest(){
+        gInts.addVertex(1);
+        assertTrue(gInts.addVertex(1));
+    }
+
     @Test
     public void onePathFindsAPath() {
         System.out.println("\nTest onePathFindsAPath");

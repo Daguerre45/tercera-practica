@@ -18,6 +18,8 @@ public class Graph<V> {
      ******************************************************************/
 
     public boolean addVertex(V v) {
+        if(this.adjacencyList.containsKey(V));
+        this.adjacencyList.put(v, new TreeSet<V>());
         return true; // Este código hay que modificarlo.
     }
 
@@ -63,7 +65,8 @@ public class Graph<V> {
      ******************************************************************/
     @Override
     public String toString() {
-        return ""; // Este código hay que modificarlo.
+        this.adjacencyList.keySet(V);
+        return "Vertice\tConexiones\n"; // Este código hay que modificarlo.
     }
 
     /******************************************************************
