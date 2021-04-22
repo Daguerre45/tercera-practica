@@ -23,7 +23,7 @@ public class GraphTest {
 
     @Before
     public voidsetup(){
-        gInts = new Graph<Integer> ;
+        gInts = new Graph<Integer> ();
     }
 
     @Test
