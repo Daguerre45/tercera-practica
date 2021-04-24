@@ -18,9 +18,13 @@ public class Graph<V> {
      ******************************************************************/
 
     public boolean addVertex(V v) {
-        if(this.adjacencyList.containsKey(V));
-        this.adjacencyList.put(v, new TreeSet<V>());
-        return true; // Este código hay que modificarlo.
+        if(this.adjacencyList.containsKey(V)){
+            this.adjacencyList.put(v, new TreeSet<V>());
+        }
+        return true; 
+        if(this.adjacencyList.NotConteinsKey(V)){
+            this.adjacencyList.put(v, new TreeSet<V>());
+        }return false;
     }
 
     /******************************************************************

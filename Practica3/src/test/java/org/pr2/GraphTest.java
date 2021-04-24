@@ -9,21 +9,18 @@ import org.junit.Test;
 
 import jdk.jfr.Timestamp;
 
-/**
- * Unit test for simple App.
- */
-public class GraphTest {
+public class GraphTest <V,I>{
     /**
      * Este test comprueba que el método ‘onePath(V v1, V v2)‘ encuentra un camino
      * entre ‘v1‘ y ‘v2‘ cuando existe.
      */
 
-    Graph<Integer> gInts;
+    Graph<I> gInts;
     
 
     @Before
     public voidsetup(){
-        gInts = new Graph<Integer> ();
+        gInts = new Graph<I> ();
     }
 
     @Test
@@ -39,7 +36,7 @@ public class GraphTest {
 
     @Test 
     public void toStringSingleVertexTest(){
-        gInts.addVertex(1);
+        gInts.addVertex(V,1);
         String expectedOutput = "Vertice\tConexiones\n" + "1\t\n" ;
         assertEquals(expectedOutput,gInts.toString());
 
@@ -47,8 +44,8 @@ public class GraphTest {
 
     @Test 
     public void addSingleVertexTest(){
-        gInts.addVertex(1);
-        assertTrue(gInts.addVertex(1));
+        gInts.addVertex(V,2);
+        assertTrue(gInts.addVertex(V,1));
     }
 
     @Test
