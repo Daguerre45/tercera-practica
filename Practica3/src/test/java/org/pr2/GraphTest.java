@@ -1,53 +1,71 @@
 package org.pr2;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
-import org.junit.Test;
+import org.junit.*;
 
-import jdk.jfr.Timestamp;
+public class GraphTest {
 
-public class GraphTest <V,I>{
+    // Graph <Integer, Integer> gInts;
+    Graph<Integer> gInts;
+
+    @Before
+    public void voidsetup() {
+        gInts = new Graph<Integer>();
+    }
+
+    @Test
+    public void graphExixstsTest() {
+        assertNotNull(gInts);
+    }
+
+    @Test
+    public void toStringEmptyTest() {
+        String expectedOutputs = "Vertice\tConexiones\n";
+        assertEquals(expectedOutputs, gInts.toString());
+    }
+
+    @Test
+    public void toStringSingleVertexTest() {
+        gInts.addVertex(1);
+        String expectedOutput = "Vertice\tConexiones\n" + "1\t\n";
+        assertEquals(expectedOutput, gInts.toString());
+
+    }
+
+    @Test
+    public void addSingleVertexTest() {
+        gInts.addVertex(1);
+        gInts.addVertex(2);
+        gInts.addVertex(3);
+        gInts.addVertex(4);
+        gInts.addVertex(5);
+        gInts.addVertex(6);
+        gInts.addVertex(7);
+        assertTrue(gInts.addVertex(1));
+        assertTrue(gInts.addVertex(2));
+        assertTrue(gInts.addVertex(3));
+        assertTrue(gInts.addVertex(4));
+        assertTrue(gInts.addVertex(5));
+        assertTrue(gInts.addVertex(6));
+        assertTrue(gInts.addVertex(7));
+    }
+
+    @Test
+    public void addSingleWrongVertex() {
+        gInts.addVertex(2);
+        gInts.addVertex(2);
+        assertFalse(gInts.addVertex(2));
+    }
+
     /**
      * Este test comprueba que el método ‘onePath(V v1, V v2)‘ encuentra un camino
      * entre ‘v1‘ y ‘v2‘ cuando existe.
      */
-
-    Graph<I> gInts;
-    
-
-    @Before
-    public voidsetup(){
-        gInts = new Graph<I> ();
-    }
-
-    @Test
-    public void graphExixstsTest(){
-        assertNotNull(true);
-    }
-
-    @Test
-    public void toStringEmptyTest(){
-        String expectedOutputs = "Vertice\tConexiones\n";
-        assertEquals(expectedOutputs,gInts.toString());
-    }
-
-    @Test 
-    public void toStringSingleVertexTest(){
-        gInts.addVertex(V,1);
-        String expectedOutput = "Vertice\tConexiones\n" + "1\t\n" ;
-        assertEquals(expectedOutput,gInts.toString());
-
-    }
-
-    @Test 
-    public void addSingleVertexTest(){
-        gInts.addVertex(V,2);
-        assertTrue(gInts.addVertex(V,1));
-    }
-
     @Test
     public void onePathFindsAPath() {
         System.out.println("\nTest onePathFindsAPath");

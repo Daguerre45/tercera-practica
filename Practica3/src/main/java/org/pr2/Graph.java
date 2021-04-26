@@ -1,9 +1,6 @@
 package org.pr2;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 public class Graph<V> {
     // Lista de adyacencia.
@@ -12,19 +9,19 @@ public class Graph<V> {
 
     /******************************************************************
      * Añade el vértice ‘v‘ al grafo.
+     * 
+     * @param v
      *
      * @param v vértice a añadir.
      * @return ‘true‘ si no estaba anteriormente y ‘false‘ en caso * contrario.
      ******************************************************************/
 
     public boolean addVertex(V v) {
-        if(this.adjacencyList.containsKey(V)){
+        if (!this.adjacencyList.containsKey(v)) {
             this.adjacencyList.put(v, new TreeSet<V>());
-        }
-        return true; 
-        if(this.adjacencyList.NotConteinsKey(V)){
-            this.adjacencyList.put(v, new TreeSet<V>());
-        }return false;
+            return true;
+        } else
+            return false;
     }
 
     /******************************************************************
@@ -69,7 +66,7 @@ public class Graph<V> {
      ******************************************************************/
     @Override
     public String toString() {
-        this.adjacencyList.keySet(V);
+        this.adjacencyList.keySet();
         return "Vertice\tConexiones\n"; // Este código hay que modificarlo.
     }
 
