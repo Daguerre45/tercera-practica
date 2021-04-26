@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: org.pr2.GraphTest
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 0.056 s <<< FAILURE! - in org.pr2.GraphTest
+toStringSingleVertexTest(org.pr2.GraphTest)  Time elapsed: 0.008 s  <<< FAILURE!
+org.junit.ComparisonFailure: 
+expected:<Vertice	Conexiones
+[1	
+]> but was:<Vertice	Conexiones
+[]>
+	at org.pr2.GraphTest.toStringSingleVertexTest(GraphTest.java:51)
+
+addSingleVertexTest(org.pr2.GraphTest)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.pr2.GraphTest.addSingleVertexTest(GraphTest.java:39)
+
