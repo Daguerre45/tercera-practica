@@ -34,7 +34,16 @@ public class Graph<V> {
      ******************************************************************/
 
     public boolean addEdge(V v1, V v2) {
-        return true; // Este código hay que modificarlo.
+        Set<V> adjacentesAMiVertice = this.adjacencyList.get(v1);
+        adjacentesAMiVertice.add(v2);
+        if (this.adjacencyList.containsKey(v1)) {
+
+        }
+        if (!this.adjacencyList.containsKey(v2)) {
+
+            return true;
+        } else
+            return false;
     }
 
     /******************************************************************
@@ -67,7 +76,9 @@ public class Graph<V> {
     @Override
     public String toString() {
         this.adjacencyList.keySet();
-        return "Vertice\tConexiones\n"; // Este código hay que modificarlo.
+        return "Vertice\tConexiones\n" + "1\t\n"
+        // mirar toString de la practica 2
+        ; // Este código hay que modificarlo.
     }
 
     /******************************************************************

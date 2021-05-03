@@ -1,10 +1,7 @@
 package org.pr2;
 
 import static org.junit.Assert.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 import org.junit.*;
 
@@ -31,17 +28,18 @@ public class GraphTest {
 
     @Test
     public void addSingleVertexTest() {
-        gInts.addVertex(1);
+
         /*
          * gInts.addVertex(2); gInts.addVertex(3); gInts.addVertex(4);
          * gInts.addVertex(5); gInts.addVertex(6); gInts.addVertex(7);
          */
         assertTrue(gInts.addVertex(1));
-        /*
-         * assertTrue(gInts.addVertex(2)); assertTrue(gInts.addVertex(3));
-         * assertTrue(gInts.addVertex(4)); assertTrue(gInts.addVertex(5));
-         * assertTrue(gInts.addVertex(6)); assertTrue(gInts.addVertex(7));
-         */
+        assertTrue(gInts.addVertex(2));
+        assertTrue(gInts.addVertex(3));
+        assertTrue(gInts.addVertex(4));
+        assertTrue(gInts.addVertex(5));
+        assertTrue(gInts.addVertex(6));
+        assertTrue(gInts.addVertex(7));
     }
 
     @Test
@@ -56,6 +54,21 @@ public class GraphTest {
         gInts.addVertex(2);
         gInts.addVertex(2);
         assertFalse(gInts.addVertex(2));
+    }
+
+    @Test
+    public void addEdgeOk() {
+        gInts.addVertex(1);
+        gInts.addVertex(2);
+        assertTrue(gInts.addEdge(1, 2));
+
+    }
+
+    @Test
+    public void addEdgeFail() {
+
+        assertFalse(gInts.addEdge(1, 2));
+
     }
 
     /**
