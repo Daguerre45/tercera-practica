@@ -1,12 +1,8 @@
 -------------------------------------------------------------------------------
 Test set: org.pr2.GraphTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.068 s <<< FAILURE! - in org.pr2.GraphTest
-toStringEmptyTest(org.pr2.GraphTest)  Time elapsed: 0.008 s  <<< FAILURE!
-org.junit.ComparisonFailure: 
-expected:<Vertice	Conexiones
-[]> but was:<Vertice	Conexiones
-[1	
-]>
-	at org.pr2.GraphTest.toStringEmptyTest(GraphTest.java:26)
+Tests run: 7, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.042 s <<< FAILURE! - in org.pr2.GraphTest
+addEdgeFail(org.pr2.GraphTest)  Time elapsed: 0.005 s  <<< FAILURE!
+java.lang.AssertionError
+	at org.pr2.GraphTest.addEdgeFail(GraphTest.java:71)
 

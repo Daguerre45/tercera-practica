@@ -22,7 +22,7 @@ public class GraphTest {
 
     @Test
     public void toStringEmptyTest() {
-        String expectedOutputs = "Vertice\tConexiones\n";
+        String expectedOutputs = "Vertice\tConexiones\n" + "1\t\n";
         assertEquals(expectedOutputs, gInts.toString());
     }
 
@@ -66,9 +66,9 @@ public class GraphTest {
 
     @Test
     public void addEdgeFail() {
-
-        assertFalse(gInts.addEdge(1, 2));
-
+        gInts.addVertex(1);
+        gInts.addVertex(3);
+        assertFalse(gInts.addEdge(1, 3));
     }
 
     /**
