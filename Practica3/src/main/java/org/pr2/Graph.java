@@ -35,9 +35,9 @@ public class Graph<V> {
 
     public boolean addEdge(V v1, V v2) {
         Set<V> adjacentesAMiVertice = this.adjacencyList.get(v1);
-        adjacentesAMiVertice.add(v2);
-        if (this.adjacencyList.containsKey(v1)) {
-            adjacentesAMiVertice.contains(v2);
+        if (this.adjacencyList.containsKey(v1) && this.adjacencyList.containsKey(v2)
+                && !adjacentesAMiVertice.contains(v2)) {
+            adjacentesAMiVertice.add(v2);
             return true;
         } else
             return false;
@@ -51,7 +51,10 @@ public class Graph<V> {
      ******************************************************************/
 
     public Set<V> obtainAdjacents(V v) throws Exception {
-        return null; // Este código hay que modificarlo.
+        if (this.adjacencyList.containsKey(v)) {
+            return this.adjacencyList.get(v);
+        } else
+            return null; // Este código hay que modificarlo.
     }
 
     /******************************************************************
