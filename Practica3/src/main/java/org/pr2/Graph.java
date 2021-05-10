@@ -75,10 +75,13 @@ public class Graph<V> {
      ******************************************************************/
     @Override
     public String toString() {
-        this.adjacencyList.keySet();
-        return "Vertice\tConexiones\n" + "1\t\n";
-        // mirar toString de la practica 2
-        // Este código hay que modificarlo.
+        StringBuilder serie = new StringBuilder();
+        serie.append("Vertice\tConexiones\n");
+        for (Object key : this.adjacencyList.keySet()) {
+            serie.append(key.toString() + "\t" + "\n");
+        }
+
+        return serie.toString();
     }
 
     /******************************************************************

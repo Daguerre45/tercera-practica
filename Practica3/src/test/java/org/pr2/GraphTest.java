@@ -20,9 +20,11 @@ public class GraphTest {
     }
 
     @Test
-    public void toStringEmptyTest() {
-        String expectedOutputs = "Vertice\tConexiones\n" + "1\t\n";
-        assertEquals(expectedOutputs, gInts.toString());
+    public void toStringTest() {
+        gInts.addVertex(1);
+        gInts.addVertex(2);
+        String expectedOutupString = "Vertice\tConexiones\n" + "1\t\n" + "2\t\n";
+        assertEquals((expectedOutupString), gInts.toString());
     }
 
     @Test
@@ -80,12 +82,17 @@ public class GraphTest {
 
     @Test
     public void obtainAdjacentsFalse() throws Exception {
-        gInts.addVertex(1);
-        gInts.addVertex(3);
-        gInts.addVertex(2);
-        gInts.addEdge(1, 2);
-        gInts.obtainAdjacents(3);
-        assertNull(gInts.obtainAdjacents(1));
+        this.gInts.obtainAdjacents(1);
+
+        /*
+         * gInts.addVertex(1); gInts.addVertex(3); gInts.addEdge(1, 2);
+         * gInts.obtainAdjacents(2); assertNull(gInts.obtainAdjacents(1));
+         */
+
+    }
+
+    @Test
+    public void containsVertexTrue() {
 
     }
 
