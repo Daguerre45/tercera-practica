@@ -80,22 +80,22 @@ public class GraphTest {
         assertNotNull(gInts.obtainAdjacents(1));
     }
 
-    @Test
+    @Test(expected = Exception.class)
     public void obtainAdjacentsFalse() throws Exception {
         this.gInts.obtainAdjacents(1);
-
-        /*
-         * gInts.addVertex(1); gInts.addVertex(3); gInts.addEdge(1, 2);
-         * gInts.obtainAdjacents(2); assertNull(gInts.obtainAdjacents(1));
-         */
 
     }
 
     @Test
     public void containsVertexTrue() {
-
+        this.gInts.addVertex(1);
+        assertTrue((gInts.containsVertex(1)));
     }
 
+    @Test
+    public void containsVertexFalse() {
+        assertFalse(gInts.containsVertex(1));
+    }
     /**
      * Este test comprueba que el método ‘onePath(V v1, V v2)‘ encuentra un camino
      * entre ‘v1‘ y ‘v2‘ cuando existe.

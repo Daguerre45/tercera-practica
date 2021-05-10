@@ -54,7 +54,7 @@ public class Graph<V> {
         if (this.adjacencyList.containsKey(v)) {
             return this.adjacencyList.get(v);
         } else
-            return null; // Este código hay que modificarlo.
+            throw new Exception("No existe ningún vértice adjacente a ese punto"); // Este código hay que modificarlo.
     }
 
     /******************************************************************
@@ -65,7 +65,10 @@ public class Graph<V> {
      ******************************************************************/
 
     public boolean containsVertex(V v) {
-        return true; // Este código hay que modificarlo.
+        if (this.adjacencyList.containsKey(v)) {
+            return true;
+        } else
+            return false; // Este código hay que modificarlo.
     }
 
     /******************************************************************
