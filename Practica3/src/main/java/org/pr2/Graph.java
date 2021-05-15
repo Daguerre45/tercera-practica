@@ -98,6 +98,33 @@ public class Graph<V> {
      ******************************************************************/
 
     public List<V> onePath(V v1, V v2) {
-        return null; // Este código hay que modificarlo.
+        Stack<V> abierta = new Stack<>();
+        List<V> traza = new ArrayList<>();
+        boolean encontrado = false;
+        Set<V> visitados = new HashSet<>();
+        abierta.push(v1);
+        traza.add(v1);
+
+        while (!abierta.isEmpty() && !encontrado) {
+            V viajero = abierta.pop();
+            if (viajero.equals(v2)) {
+                for (V adjacentesViajero : adjacencyList.get(viajero)) {
+                    if (viajero.equals(v2)) {
+                        encontrado = true;
+
+                    } else {
+                        for (V adjacentesAnnadir : adjacencyList.get(viajero)) {
+                            abierta.push(adjacentesAnnadir);
+                        }
+
+                    }
+                }
+            }
+        }
+        if (encontrado) {
+            return traza;
+        } else
+            return null;
+
     }
 }
