@@ -12,5 +12,29 @@ See the License for the specific language governing permissions
 and
 limitations under the License.
 
+___
+# BÚSQUEDA DE UN CAMINO DE UN GRAFO #
+En este proyecto programaremos y veremos cómo se busca o como se consigue un camino de un vértice a otro dentro de un gráfo y que pasos sigue.
 
-# tercera-practica
+
+___
+### ¿En que consiste el juego de la vida? ###
+Representación simbólica de los elementos constituidos de un 
+sistema o conjunto, mediante esquemas gráficos.
+
+![imagenGraph.png](../tercera-practica/imagenGraph.png)
+
+___
+## Autor
+* **[Alberto Daguerre Torres]
+(https://github.com/Daguerre45/tercera-practica.git)*
+
+
+___
+## Copyright
+Yo, Alberto Daguerre Torres creador
+de este repositorio, concedo el uso
+de este para cualquier persona que 
+se quiera basar en este código o 
+cualquiera que quiera retocarlo o 
+simplemente trastear con el.
