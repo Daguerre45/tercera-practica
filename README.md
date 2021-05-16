@@ -13,4 +13,10 @@ and
 limitations under the License.
 
 
-# tercera-practica
+___
+# BÚSQUEDA DE UN CAMINO EN UN GRAFO#
+El propósito de este proyecto es programar como se suceden y que pasos se hacen para llegar de un punto a otro dento de un grafo.
+
+___
+### ¿Que es un grafo? ###
+Representación simbólica de los elementos constituidos de un sistema o conjunto, mediante esquemas gráficos.
