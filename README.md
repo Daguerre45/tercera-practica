@@ -14,8 +14,7 @@ limitations under the License.
 
 ___
 # BÚSQUEDA DE UN CAMINO DE UN GRAFO #
-En este proyecto programaremos y veremos cómo se busca o como se consigue un camino de un vértice a otro dentro de un gráfo y que pasos sigue.
-
+En este proyecto programaremos y veremos cómo se busca o como se consigue un camino de un vértice a otro dentro de un gráfo y que pasos sigue
 
 ___
 ### ¿En que consiste el juego de la vida? ###
