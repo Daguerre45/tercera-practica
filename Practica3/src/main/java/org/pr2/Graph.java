@@ -1,6 +1,27 @@
+/**
+ Copyright 2021 Alberto Daguerre Torres
+ Licensed under the Apache License, Version 2.0 (the "License");
+ you may not use this file except in compliance with the License.
+ You may obtain a copy of the License at
+ http://www.apache.org/licenses/LICENSE-2.0
+ Unless required by applicable law or agreed to in writing, software
+ distributed under the License is distributed on an "AS IS" BASIS,
+ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ See the License for the specific language governing permissions and
+ limitations under the License.
+ */
+
 package org.pr2;
 
 import java.util.*;
+
+/**
+ * Esta clase contiene todo lo necesario pada poder crear una matriz. Tanto una
+ * cualquiera como una creada aleatoriamete.
+ * 
+ * @author Alberto Daguerre
+ * @version final 24/03/2021
+ */
 
 public class Graph<V> {
     // Lista de adyacencia.
@@ -98,30 +119,39 @@ public class Graph<V> {
      ******************************************************************/
 
     public List<V> onePath(V v1, V v2) {
-        Stack<V> abierta = new Stack<>();
+        Stack<V> pila = new Stack<>();
         List<V> traza = new ArrayList<>();
         boolean encontrado = false;
         Set<V> visitados = new HashSet<>();
-        abierta.push(v1);
+        pila.push(v1);
         traza.add(v1);
 
-        while (!abierta.isEmpty() && !encontrado) {
-            V viajero = abierta.pop();
+        while (!pila.isEmpty() && !encontrado) {
+            V viajero = pila.pop();
             if (viajero.equals(v2)) {
                 for (V adjacentesViajero : adjacencyList.get(viajero)) {
+                    // traza.add(adjacentesViajero);
                     if (viajero.equals(v2)) {
                         encontrado = true;
 
                     } else {
                         for (V adjacentesAnnadir : adjacencyList.get(viajero)) {
-                            abierta.push(adjacentesAnnadir);
-                        }
+                            visitados.add(viajero);
+                            visitados.add(adjacentesAnnadir);
+                            pila.push(adjacentesAnnadir);
+                            while (encontrado = false) {
+                                if (adjacentesViajero != null) {
 
+                                }
+                            }
+                        }
                     }
                 }
+
             }
         }
-        if (encontrado) {
+
+        if (!encontrado) {
             return traza;
         } else
             return null;
