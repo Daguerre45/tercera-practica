@@ -37,3 +37,5 @@ de este para cualquier persona que
 se quiera basar en este código o 
 cualquiera que quiera retocarlo o 
 simplemente trastear con el.
+
+![Copyright.png](../tercera-practica/Copyright.png)
