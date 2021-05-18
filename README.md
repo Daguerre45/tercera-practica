@@ -24,6 +24,10 @@ sistema o conjunto, mediante esquemas gráficos.
 ![imagenGraph.png](../tercera-practica/imagenGraph.png)
 
 ___
+### Comandos ###
+1- 
+
+___
 ## Autor
 * **[Alberto Daguerre Torres]
 (https://github.com/Daguerre45/tercera-practica.git)*

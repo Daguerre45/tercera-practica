@@ -16,11 +16,12 @@ package org.pr2;
 import java.util.*;
 
 /**
- * Esta clase contiene todo lo necesario pada poder crear una matriz. Tanto una
- * cualquiera como una creada aleatoriamete.
+ * Esta clase contiene todo lo necesario pada poder crear en base al genérico
+ * 'V' Vértices en un grafo; Ejes que unen los vértices y Los adjacentes a mis
+ * vértices;
  * 
  * @author Alberto Daguerre
- * @version final 24/03/2021
+ * @version final 19/05/2021
  */
 
 public class Graph<V> {
@@ -29,7 +30,8 @@ public class Graph<V> {
     private Map<V, Set<V>> adjacencyList = new HashMap<>();
 
     /******************************************************************
-     * Añade el vértice ‘v‘ al grafo. Complejidad espacial O(1).
+     * Añade el vértice ‘v‘ al grafo. Complejidad espacial O(1). Complejidad
+     * temporal O(1).
      * 
      * @param v
      *
@@ -48,6 +50,7 @@ public class Graph<V> {
     /******************************************************************
      * Añade un arco entre los vértices ‘v1‘ y ‘v2‘ al grafo. En caso de que no
      * exista alguno de los vértices, lo añade también. Complejidad espacial O(1).
+     * Complejidad temporal O(1).
      *
      * @param v1 el origen del arco.
      * @param v2 el destino del arco.
@@ -65,7 +68,8 @@ public class Graph<V> {
     }
 
     /******************************************************************
-     * Obtiene el conjunto de vértices adyacentes a ‘v‘. Complejidad espacial 0(1).
+     * Obtiene el conjunto de vértices adyacentes a ‘v‘. Complejidad espacial
+     * 0(1).Complejidad temporal O(1).
      *
      * @param v vértice del que se obtienen los adyacentes.
      * @return conjunto de vértices adyacentes.
@@ -79,7 +83,8 @@ public class Graph<V> {
     }
 
     /******************************************************************
-     * Comprueba si el grafo contiene el vértice dado.Complejidad espacial O(1).
+     * Comprueba si el grafo contiene el vértice dado.Complejidad espacial
+     * O(1).Complejidad temporal O(1).
      *
      * @param v vértice para el que se realiza la comprobación.
      * @return ‘true‘ si ‘v‘ es un vértice del grafo.
@@ -93,7 +98,8 @@ public class Graph<V> {
     }
 
     /******************************************************************
-     * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘.
+     * Método ‘toString()‘ reescrito para la clase ‘Grafo.java‘. Complejidad
+     * espacial O(1). Complejidad temporal O(n).
      * 
      * @return una cadena de caracteres con la lista de adyacencia .
      ******************************************************************/
