@@ -29,7 +29,7 @@ public class Graph<V> {
     private Map<V, Set<V>> adjacencyList = new HashMap<>();
 
     /******************************************************************
-     * Añade el vértice ‘v‘ al grafo.
+     * Añade el vértice ‘v‘ al grafo. Complejidad espacial O(1).
      * 
      * @param v
      *
@@ -47,7 +47,7 @@ public class Graph<V> {
 
     /******************************************************************
      * Añade un arco entre los vértices ‘v1‘ y ‘v2‘ al grafo. En caso de que no
-     * exista alguno de los vértices, lo añade también.
+     * exista alguno de los vértices, lo añade también. Complejidad espacial O(1).
      *
      * @param v1 el origen del arco.
      * @param v2 el destino del arco.
@@ -65,7 +65,7 @@ public class Graph<V> {
     }
 
     /******************************************************************
-     * Obtiene el conjunto de vértices adyacentes a ‘v‘.
+     * Obtiene el conjunto de vértices adyacentes a ‘v‘. Complejidad espacial 0(1).
      *
      * @param v vértice del que se obtienen los adyacentes.
      * @return conjunto de vértices adyacentes.
@@ -79,7 +79,7 @@ public class Graph<V> {
     }
 
     /******************************************************************
-     * Comprueba si el grafo contiene el vértice dado.
+     * Comprueba si el grafo contiene el vértice dado.Complejidad espacial O(1).
      *
      * @param v vértice para el que se realiza la comprobación.
      * @return ‘true‘ si ‘v‘ es un vértice del grafo.
@@ -100,9 +100,10 @@ public class Graph<V> {
     @Override
     public String toString() {
         StringBuilder serie = new StringBuilder();
-        serie.append("Vertice\tConexiones\n");
+        serie.append("Vertice\t Conexiones\n");
         for (Object key : this.adjacencyList.keySet()) {
-            serie.append(key.toString() + "\t" + "\n");
+            serie.append(key.toString());
+            serie.append(this.adjacencyList.get(key).toString() + "\n");
         }
 
         return serie.toString();
@@ -122,36 +123,19 @@ public class Graph<V> {
         Stack<V> pila = new Stack<>();
         List<V> traza = new ArrayList<>();
         boolean encontrado = false;
-        Set<V> visitados = new HashSet<>();
         pila.push(v1);
-        traza.add(v1);
-
         while (!pila.isEmpty() && !encontrado) {
             V viajero = pila.pop();
-            if (viajero.equals(v2)) {
+            traza.add(viajero);
+            if (!viajero.equals(v2)) {
                 for (V adjacentesViajero : adjacencyList.get(viajero)) {
-                    // traza.add(adjacentesViajero);
-                    if (viajero.equals(v2)) {
-                        encontrado = true;
-
-                    } else {
-                        for (V adjacentesAnnadir : adjacencyList.get(viajero)) {
-                            visitados.add(viajero);
-                            visitados.add(adjacentesAnnadir);
-                            pila.push(adjacentesAnnadir);
-                            while (encontrado = false) {
-                                if (adjacentesViajero != null) {
-
-                                }
-                            }
-                        }
-                    }
+                    pila.push(adjacentesViajero);
                 }
-
-            }
+            } else
+                encontrado = true;
         }
 
-        if (!encontrado) {
+        if (encontrado) {
             return traza;
         } else
             return null;

@@ -40,20 +40,7 @@ public class GraphTest {
     }
 
     @Test
-    public void toStringTest() {
-        gInts.addVertex(1);
-        gInts.addVertex(2);
-        String expectedOutupString = "Vertice\tConexiones\n" + "1\t\n" + "2\t\n";
-        assertEquals((expectedOutupString), gInts.toString());
-    }
-
-    @Test
     public void addSingleVertexTest() {
-
-        /*
-         * gInts.addVertex(2); gInts.addVertex(3); gInts.addVertex(4);
-         * gInts.addVertex(5); gInts.addVertex(6); gInts.addVertex(7);
-         */
         assertTrue(gInts.addVertex(1));
         assertTrue(gInts.addVertex(2));
         assertTrue(gInts.addVertex(3));
@@ -61,13 +48,6 @@ public class GraphTest {
         assertTrue(gInts.addVertex(5));
         assertTrue(gInts.addVertex(6));
         assertTrue(gInts.addVertex(7));
-    }
-
-    @Test
-    public void toStringSingleVertexTest() {
-        gInts.addVertex(1);
-        String expectedOutput = "Vertice\tConexiones\n" + "1\t\n";
-        assertEquals(expectedOutput, gInts.toString());
     }
 
     @Test
@@ -117,6 +97,44 @@ public class GraphTest {
         assertFalse(gInts.containsVertex(1));
     }
 
+    @Test
+    public void emptyToString() {
+        String expexctedOutpuString = "Vertice\t Conexiones\n";
+        assertEquals(expexctedOutpuString + "", gInts.toString());
+    }
+
+    @Test
+    public void toStringVertex() {
+        assertTrue(gInts.addVertex(1));
+        String expectedOutputString = "Vertice\t Conexiones\n";
+        assertEquals(expectedOutputString + "1[]\n", gInts.toString());
+    }
+
+    @Test
+    public void toStringVertexFail() {
+        assertTrue(gInts.addVertex(1));
+        assertFalse(gInts.addVertex(1));
+        String expectedOutputString = "Vertice\t Conexiones\n";
+        assertEquals(expectedOutputString + "1[]\n", gInts.toString());
+    }
+
+    @Test
+    public void toStringEdge() {
+        assertTrue(gInts.addVertex(1));
+        assertTrue(gInts.addVertex(2));
+        assertTrue(gInts.addEdge(1, 2));
+        String expectedOutputString = "Vertice\t Conexiones\n";
+        assertEquals(expectedOutputString + "1[2]\n" + "2[]\n", gInts.toString());
+    }
+
+    @Test
+    public void toStringEdgeFail() {
+        assertTrue(gInts.addVertex(1));
+        assertFalse(gInts.addEdge(1, 2));
+        String expectedOutputString = "Vertice\t Conexiones\n";
+        assertEquals(expectedOutputString + "1[]\n", gInts.toString());
+    }
+
     /**
      * Este test comprueba que el método ‘onePath(V v1, V v2)‘ encuentra un camino
      * entre ‘v1‘ y ‘v2‘ cuando existe.
@@ -124,9 +142,16 @@ public class GraphTest {
 
     @Test
     public void onePathFindsAPath() {
+
         System.out.println("\nTest onePathFindsAPath");
         System.out.println("----------------------"); // Se construye el grafo.
         Graph<Integer> g = new Graph<>();
+        g.addVertex(1);
+        g.addVertex(2);
+        g.addVertex(3);
+        g.addVertex(4);
+        g.addVertex(5);
+        g.addVertex(6);
         g.addEdge(1, 2);
         g.addEdge(3, 4);
         g.addEdge(1, 5);
@@ -136,7 +161,7 @@ public class GraphTest {
         expectedPath.add(1);
         expectedPath.add(5);
         expectedPath.add(6);
-        expectedPath.add(4); // Se comprueba si el camino devuelto es igual alesperado.
+        expectedPath.add(4); // Se comprueba si el camino devuelto es igual al esperado.
         assertEquals(expectedPath, g.onePath(1, 4));
     }
 

@@ -17,7 +17,7 @@ ___
 En este proyecto programaremos y veremos cómo se busca o como se consigue un camino de un vértice a otro dentro de un gráfo y que pasos sigue
 
 ___
-### ¿En que consiste el juego de la vida? ###
+### ¿Qué es un grafo? ###
 Representación simbólica de los elementos constituidos de un 
 sistema o conjunto, mediante esquemas gráficos.
 
