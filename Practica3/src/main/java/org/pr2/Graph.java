@@ -117,7 +117,8 @@ public class Graph<V> {
 
     /******************************************************************
      * Obtiene, en caso de que exista, un camino entre ‘v1‘ y ‘v2 ‘. En caso
-     * contrario, devuelve ‘null‘.
+     * contrario, devuelve ‘null‘. Complejidad espacial O(1). Complejidad Temporal
+     * (n^2).
      *
      * @param v1 el vértice origen.
      * @param v2 el vértice destino.
